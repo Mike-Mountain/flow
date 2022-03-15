@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/container",
         "index": "apps/container/src/index.html",
@@ -18,7 +20,9 @@
           "apps/container/src/favicon.ico",
           "apps/container/src/assets"
         ],
-        "styles": ["apps/container/src/styles.scss"],
+        "styles": [
+          "apps/container/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/container/webpack.config.js"
@@ -92,7 +96,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/container"],
+      "outputs": [
+        "coverage/apps/container"
+      ],
       "options": {
         "jestConfig": "apps/container/jest.config.js",
         "passWithNoTests": true
@@ -101,7 +107,9 @@
     "serve-mfe": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["nx serve container"]
+        "commands": [
+          "nx serve container"
+        ]
       }
     }
   },
