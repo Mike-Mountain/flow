@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@flow/container-core": ["libs/container-core/src/index.ts"]
+      "@flow/container-core": ["libs/container-core/src/index.ts"],
+      "@flow/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
