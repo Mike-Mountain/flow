@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "container": "apps/container",
+    "container-core": "libs/container-core",
     "container-e2e": "apps/e2e/container-e2e"
   }
 }
