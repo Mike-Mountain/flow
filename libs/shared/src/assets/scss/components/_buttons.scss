@@ -1,0 +1,16 @@
+.flow-button {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: rgba(var(--primaryValues), 0.2);
+  margin: .25rem 0;
+}
+
+.navigation-button {
+  width: 100%;
+  height: 3rem;
+}
+
+.footer-button {
+  width: 85%;
+  height: 2rem;
+}
