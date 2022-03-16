@@ -8,19 +8,18 @@
 }
 
 .navigation {
-  border: 1px solid black;
+  background: rgba(0, 0, 0, .4);
   grid-column: 2/3;
   grid-row: 1/3;
+  width: 100%;
 }
 
 .content {
-  border: 1px solid black;
   grid-column: 3/4;
   grid-row: 1/2;
 }
 
 .carousel {
-  border: 1px solid black;
   grid-column: 3/4;
   grid-row: 2/3;
 }

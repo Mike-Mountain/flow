@@ -1,0 +1,20 @@
+.app-sidebar {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 1fr 1fr;
+  color: var(--text);
+}
+
+.navigation, .footer-nav {
+  width: 100%;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
