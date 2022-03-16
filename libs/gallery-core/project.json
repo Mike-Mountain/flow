@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/gallery-core",
+  "sourceRoot": "libs/gallery-core/src",
+  "prefix": "gal-core",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/gallery-core"],
+      "options": {
+        "jestConfig": "libs/gallery-core/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/gallery-core/src/**/*.ts",
+          "libs/gallery-core/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

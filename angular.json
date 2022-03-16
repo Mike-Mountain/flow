@@ -4,6 +4,7 @@
     "container": "apps/container",
     "container-core": "libs/container-core",
     "container-e2e": "apps/e2e/container-e2e",
+    "gallery-core": "libs/gallery-core",
     "shared": "libs/shared"
   }
 }
