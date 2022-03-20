@@ -5,6 +5,7 @@
     "container-core": "libs/container-core",
     "container-e2e": "apps/e2e/container-e2e",
     "gallery-core": "libs/gallery-core",
+    "schematics": "libs/schematics",
     "shared": "libs/shared"
   }
 }
