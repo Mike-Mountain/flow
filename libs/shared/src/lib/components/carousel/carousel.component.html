@@ -1,0 +1,16 @@
+<figure class="carousel-container">
+  <div class="carousel-action">
+    <button class="flow-button carousel-button" (click)="selectImage('previous')"><</button>
+  </div>
+  <div class="carousel" sharedCarousel [imageIdx]="currentImageIdx" (selectImage)="selectByClick($event)">
+    <ng-container *ngFor="let image of images; let idx = index">
+      <div class="carousel-image-container"  (click)="currentImageIdx = idx">
+<!--        <img src="" alt="" class="carousel-image">-->
+        <div class="carousel-image">{{image}}</div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="carousel-action">
+    <button class="flow-button carousel-button" (click)="selectImage('next')">></button>
+  </div>
+</figure>

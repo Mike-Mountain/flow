@@ -8,14 +8,19 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "target": "ES6",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES6"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@flow/container-core": ["libs/container-core/src/index.ts"],
+      "@flow/gallery-core": ["libs/gallery-core/src/index.ts"],
       "@flow/shared": ["libs/shared/src/index.ts"]
     }
   },

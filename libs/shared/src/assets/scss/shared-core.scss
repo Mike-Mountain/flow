@@ -1,3 +1,7 @@
 @import "./utils/index";
 @import './variables/index';
 @import "./components/index";
+
+.carousel-selected {
+  border-color: var(--primary) !important;
+}
