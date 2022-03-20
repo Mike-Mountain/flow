@@ -7,6 +7,8 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
     "serve-mfe": "nx run container:serve-mfe",
+    "create-mocks": "node mocks/utils/merge-mocks.js",
+    "mock-server": "json-server mocks/merged/mocks.json --routes mocks/utils/routes.json --watch",
     "build": "nx build",
     "test": "nx test"
   },
