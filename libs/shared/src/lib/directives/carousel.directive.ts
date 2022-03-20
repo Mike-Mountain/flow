@@ -1,12 +1,13 @@
 import {
   AfterViewInit,
   Directive,
-  ElementRef, EventEmitter,
+  ElementRef,
+  EventEmitter,
   HostListener,
-  Input, Output,
+  Input,
+  Output,
   Renderer2,
 } from '@angular/core';
-
 
 interface position {
   x: number;
@@ -24,10 +25,12 @@ interface direction {
   selector: '[sharedCarousel]',
 })
 export class CarouselDirective implements AfterViewInit {
-
   @Input() set imageIdx(value: number | undefined) {
     this._imageIdx = value;
-  };
+    if (value) {
+      this.scrollTo(value);
+    }
+  }
 
   get imageIdx(): number | undefined {
     return this._imageIdx;
@@ -53,14 +56,13 @@ export class CarouselDirective implements AfterViewInit {
       x: event.clientX,
       y: event.clientY,
       top: this.element.scrollTop,
-      left: this.element.scrollLeft
-    }
+      left: this.element.scrollLeft,
+    };
   }
 
   @HostListener('click')
   onImageClick() {
     if (!this.isScrolling && this.imageIdx !== undefined) {
-      this.selectImage.emit(this.imageIdx);
       this.scrollTo(this.imageIdx);
     }
   }
@@ -73,8 +75,8 @@ export class CarouselDirective implements AfterViewInit {
       this.isScrolling = true;
       const direction: direction = {
         x: event.clientX - this.position.x,
-        y: event.clientY - this.position.y
-      }
+        y: event.clientY - this.position.y,
+      };
       this.element.scrollTop = this.position.top - direction.y;
       this.element.scrollLeft = this.position.left - direction.x;
     }
@@ -87,11 +89,13 @@ export class CarouselDirective implements AfterViewInit {
 
   @HostListener('mousewheel', ['$event'])
   handleScroll(event: WheelEvent) {
-    this.element.scrollBy({left: -event.deltaY, behavior: "smooth"})
+    this.element.scrollBy({ left: -event.deltaY, behavior: 'smooth' });
   }
 
-  constructor(private _el: ElementRef<HTMLElement>,
-              private _renderer: Renderer2) {
+  constructor(
+    private _el: ElementRef<HTMLElement>,
+    private _renderer: Renderer2
+  ) {
     this.element = _el.nativeElement;
   }
 
@@ -109,7 +113,7 @@ export class CarouselDirective implements AfterViewInit {
       this._renderer.removeClass(this.selectedImage, 'carousel-selected');
       this.selectedImage = this.nodes[imageIdx].children[0];
       this._renderer.addClass(this.selectedImage, 'carousel-selected');
-      this.selectedImage.scrollIntoView({behavior: "smooth"});
+      this.selectedImage.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -126,5 +130,4 @@ export class CarouselDirective implements AfterViewInit {
       return false;
     }
   }
-
 }
