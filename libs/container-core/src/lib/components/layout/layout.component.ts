@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  public images: string[] = [];
+  public selectedImage = '1';
+
   constructor() { }
 
   ngOnInit(): void {
+    this.images = [...Array(21).keys()].slice(1).map(item => item.toString());
+  }
+
+  setSelectedImage(image: string) {
+    console.log(image);
+    this.selectedImage = image;
   }
 
 }
