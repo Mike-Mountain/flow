@@ -10,6 +10,7 @@ import { map } from 'rxjs';
 export class LayoutComponent implements OnInit {
   public images: string[] = [];
   public selectedImage = '1';
+  public sidebarOpen = false;
 
   constructor(private http: HttpClient) {}
 
@@ -28,5 +29,9 @@ export class LayoutComponent implements OnInit {
   setSelectedImage(image: string) {
     console.log(image);
     this.selectedImage = image;
+  }
+
+  toggleSidebar(isOpen: boolean) {
+    this.sidebarOpen = isOpen;
   }
 }
