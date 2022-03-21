@@ -1,15 +1,45 @@
-<aside class="app-sidebar">
-  <div class="text-center">
-    <h1 class="title">Michael Mountain</h1>
+<aside class="app-sidebar" (click)="toggleSideBar()">
+  <div class="title">
+    <h1>Michael Mountain</h1>
     <p>Web developer and hobbyist 3D modeller</p>
   </div>
   <nav class="navigation">
-    <button class="flow-button navigation-button">Featured</button>
-    <button class="flow-button navigation-button">Screenshots</button>
-    <button class="flow-button navigation-button">Blender</button>
+    <div class="nav-button-container" [class.d-block]="isOpen" (click)="$event.stopImmediatePropagation()">
+      <button class="flow-button navigation-button">
+        <span class="desktop">Featured</span>
+        <span class="mobile">F</span>
+      </button>
+      <button *ngIf="isOpen" class="flow-button nav-open-button">Featured</button>
+    </div>
+    <div class="nav-button-container" [class.d-block]="isOpen" (click)="$event.stopImmediatePropagation()">
+      <button class="flow-button navigation-button">
+        <span class="desktop">Screenshots</span>
+        <span class="mobile">S</span>
+      </button>
+      <button *ngIf="isOpen" class="flow-button nav-open-button">Screenshots</button>
+    </div>
+    <div class="nav-button-container" [class.d-block]="isOpen" (click)="$event.stopImmediatePropagation()">
+      <button class="flow-button navigation-button">
+        <span class="desktop">Blender</span>
+        <span class="mobile">B</span>
+      </button>
+      <button *ngIf="isOpen" class="flow-button nav-open-button">Blender</button>
+    </div>
   </nav>
   <footer class="footer-nav">
-    <button class="flow-button footer-button">ArtStation</button>
-    <button class="flow-button footer-button">Github</button>
+    <div class="nav-button-container" [class.d-block]="isOpen" (click)="$event.stopImmediatePropagation()">
+      <button class="flow-button footer-button">
+        <span class="desktop">ArtStation</span>
+        <span class="mobile">A</span>
+      </button>
+      <button *ngIf="isOpen" class="flow-button bottom-nav-open-button">ArtStation</button>
+    </div>
+    <div class="nav-button-container" [class.d-block]="isOpen" (click)="$event.stopImmediatePropagation()">
+      <button class="flow-button footer-button">
+        <span class="desktop">Github</span>
+        <span class="mobile">G</span>
+      </button>
+      <button *ngIf="isOpen" class="flow-button bottom-nav-open-button">Github</button>
+    </div>
   </footer>
 </aside>

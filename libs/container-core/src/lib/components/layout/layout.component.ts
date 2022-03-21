@@ -10,12 +10,13 @@ import { map } from 'rxjs';
 export class LayoutComponent implements OnInit {
   public images: string[] = [];
   public selectedImage = '1';
+  public sidebarOpen = false;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.http
-      .get('http://localhost:3000/images/blender')
+      .get('http://192.168.0.100:3000/images/blender')
       .pipe(
         map((data: any) => data.images.map((image: any) => image.assetPath))
       )
@@ -28,5 +29,9 @@ export class LayoutComponent implements OnInit {
   setSelectedImage(image: string) {
     console.log(image);
     this.selectedImage = image;
+  }
+
+  toggleSidebar(isOpen: boolean) {
+    this.sidebarOpen = isOpen;
   }
 }

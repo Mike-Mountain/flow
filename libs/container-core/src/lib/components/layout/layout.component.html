@@ -1,6 +1,8 @@
 <section class="layout" [style]="{background: 'url(\''+ selectedImage + '\') center/cover no-repeat'}">
-  <div class="navigation">
-    <ctr-core-navigation></ctr-core-navigation>
+  <div class="navigation" [class.nav-open]="sidebarOpen">
+    <ctr-core-navigation
+      (sidebarOpen)="toggleSidebar($event)"
+    ></ctr-core-navigation>
   </div>
   <div class="content">
     <router-outlet></router-outlet>

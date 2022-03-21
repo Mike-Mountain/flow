@@ -2,20 +2,41 @@
   border: 1px solid var(--primary);
   color: var(--primary);
   background: rgba(var(--primaryValues), 0.2);
-  margin: .25rem 0;
+  margin: .75rem 0;
 }
 
 .navigation-button {
-  width: 100%;
+  width: 3rem;
   height: 3rem;
+  border-radius: 50%;
 }
 
 .footer-button {
-  width: 85%;
+  width: 2rem;
   height: 2rem;
+  border-radius: 50%;
 }
 
-.carousel-button {
-  height: 3rem;
-  width: 6rem;
+@media screen and (min-width: 910px) {
+  .flow-button {
+    margin: .25rem 0;
+  }
+
+  .navigation-button {
+    height: 3rem;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .footer-button {
+    height: 2rem;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .carousel-button {
+    height: 3rem;
+    width: 6rem;
+    border-radius: 0;
+  }
 }
