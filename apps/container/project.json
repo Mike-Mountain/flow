@@ -116,6 +116,14 @@
           "nx serve container"
         ]
       }
+    },
+    "serve-mfe-network": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx serve container --host 192.168.0.100"
+        ]
+      }
     }
   },
   "tags": []

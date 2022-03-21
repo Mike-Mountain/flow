@@ -16,7 +16,7 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.http
-      .get('http://localhost:3000/images/blender')
+      .get('http://192.168.0.100:3000/images/blender')
       .pipe(
         map((data: any) => data.images.map((image: any) => image.assetPath))
       )
